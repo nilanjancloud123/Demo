@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: BaseTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.691 s <<< FAILURE! - in BaseTest
+setup(BaseTest)  Time elapsed: 0.565 s  <<< FAILURE!
+org.testng.TestNGException: 
+
+Can inject only one of <ITestContext, XmlTest> into a @BeforeTest annotated setup.
+For more information on native dependency injection please refer to http://testng.org/doc/documentation-main.html#native-dependency-injection
+
