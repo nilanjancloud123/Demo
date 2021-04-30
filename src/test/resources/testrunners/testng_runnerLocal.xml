@@ -7,7 +7,9 @@
 	</listeners>
 
 	<test name="Test - FF">
+	
 		<parameter name="Target" value="local" />
+		<parameter name="browserName" value="Firefox" />
 		<classes>
 			<class name="com.mydemo.SauceTestUpdated" />
 		</classes>
@@ -16,12 +18,14 @@
 
 	<test name="Test - Chrome">
 		<parameter name="Target" value="local" />
+		<parameter name="browserName" value="Chrome" />
 
 		<classes>
 			<class name="com.mydemo.SauceTestUpdated" />
 		</classes>
 
 	</test>
-	
+  
+
 
 </suite>
