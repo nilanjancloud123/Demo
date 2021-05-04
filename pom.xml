@@ -14,8 +14,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>11.0.11</maven.compiler.source>
-    <maven.compiler.target>11.0.11</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -98,7 +98,17 @@
 			<artifactId>tesults-testng</artifactId>
 			<version>1.0.2</version>
 		</dependency>
-			
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-api</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.slf4j</groupId>
+		    <artifactId>slf4j-simple</artifactId>
+		    <version>${slf4j.version}</version>
+		</dependency>
+		
 	   <dependency>
 	   <groupId>org.apache.logging.log4j</groupId>
 	   <artifactId>log4j-api</artifactId>
@@ -141,11 +151,7 @@
         </plugin>
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
-          <!--<version>3.8.0</version> -->
-          <configuration>
-            <source>11.0.11</source>
-            <target>11.0.11</target>
-        </configuration>
+          <version>3.8.0</version>
         </plugin>
         <plugin>
        	<groupId>org.apache.maven.plugins</groupId>
