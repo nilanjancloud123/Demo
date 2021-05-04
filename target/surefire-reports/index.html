@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 2 failed tests</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Test_automtion_regression_suite" class="navigator-link">
-              <span class="suite-name border-failed">Test automtion regression suite</span>
+              <span class="suite-name border-passed">Test automtion regression suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,26 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 2 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Test_automtion_regression_suite" class="hide-methods failed suite-Test_automtion_regression_suite"> (hide)</a> <!-- hide-methods failed suite-Test_automtion_regression_suite -->
-                      <a href="#" panel-name="suite-Test_automtion_regression_suite" class="show-methods failed suite-Test_automtion_regression_suite"> (show)</a> <!-- show-methods failed suite-Test_automtion_regression_suite -->
-                    </span>
-                    <div class="method-list-content failed suite-Test_automtion_regression_suite">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_automtion_regression_suite" title="com.mydemo.SauceTestUpdated" class="method navigator-link" hash-for-method="checkAddToCartButtonTest">checkAddToCartButtonTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Test_automtion_regression_suite" title="com.mydemo.SauceTestUpdated" class="method navigator-link" hash-for-method="checkAddToCartButtonTest">checkAddToCartButtonTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Test_automtion_regression_suite -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -119,6 +100,16 @@
                       <a href="#" panel-name="suite-Test_automtion_regression_suite" class="show-methods passed suite-Test_automtion_regression_suite"> (show)</a> <!-- show-methods passed suite-Test_automtion_regression_suite -->
                     </span>
                     <div class="method-list-content passed suite-Test_automtion_regression_suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_automtion_regression_suite" title="com.mydemo.SauceTestUpdated" class="method navigator-link" hash-for-method="checkAddToCartButtonTest">checkAddToCartButtonTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Test_automtion_regression_suite" title="com.mydemo.SauceTestUpdated" class="method navigator-link" hash-for-method="checkAddToCartButtonTest">checkAddToCartButtonTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Test_automtion_regression_suite" title="com.mydemo.SauceTestUpdated" class="method navigator-link" hash-for-method="checkInventoryItemTest">checkInventoryItemTest</a> <!-- method navigator-link -->
@@ -141,42 +132,26 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Test_automtion_regression_suite" class="panel Test_automtion_regression_suite">
-          <div class="suite-Test_automtion_regression_suite-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.mydemo.SauceTestUpdated</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkAddToCartButtonTest">
-                  </a> <!-- checkAddToCartButtonTest -->
-                  <span class="method-name">checkAddToCartButtonTest</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:33)
-... Removed 33 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="checkAddToCartButtonTest">
-                  </a> <!-- checkAddToCartButtonTest -->
-                  <span class="method-name">checkAddToCartButtonTest</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:33)
-... Removed 33 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Test_automtion_regression_suite-class-failed -->
           <div class="suite-Test_automtion_regression_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
               <span class="class-name">com.mydemo.SauceTestUpdated</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkAddToCartButtonTest">
+                  </a> <!-- checkAddToCartButtonTest -->
+                  <span class="method-name">checkAddToCartButtonTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkAddToCartButtonTest">
+                  </a> <!-- checkAddToCartButtonTest -->
+                  <span class="method-name">checkAddToCartButtonTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="checkInventoryItemTest">
@@ -202,11 +177,11 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Test automtion regression suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+&lt;suite thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Test automtion regression suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;ExtentReportListener.ExtentReportListenerUpdated&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test - FF&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Test - FF&quot; verbose=&quot;0&quot;&gt;
     &lt;parameter name=&quot;Target&quot; value=&quot;browserStack&quot;/&gt;
     &lt;parameter name=&quot;os&quot; value=&quot;Windows&quot;/&gt;
     &lt;parameter name=&quot;os_version&quot; value=&quot;10&quot;/&gt;
@@ -216,7 +191,7 @@
       &lt;class name=&quot;com.mydemo.SauceTestUpdated&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test - FF --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test - Chrome&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Test - Chrome&quot; verbose=&quot;0&quot;&gt;
     &lt;parameter name=&quot;Target&quot; value=&quot;browserStack&quot;/&gt;
     &lt;parameter name=&quot;os&quot; value=&quot;OS X&quot;/&gt;
     &lt;parameter name=&quot;os_version&quot; value=&quot;Catalina&quot;/&gt;
@@ -270,24 +245,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkAddToCartButtonTest')
 data.setCell(0, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(0, 3, 31809);
+data.setCell(0, 3, 23238);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'checkAddToCartButtonTest')
 data.setCell(1, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(1, 3, 22503);
+data.setCell(1, 3, 22528);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'checkInventoryItemTest')
 data.setCell(2, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(2, 3, 5802);
+data.setCell(2, 3, 3193);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'checkInventoryItemTest')
 data.setCell(3, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(3, 3, 2337);
+data.setCell(3, 3, 2806);
 window.suiteTableData['Test_automtion_regression_suite']= { tableData: data, tableDiv: 'times-div-Test_automtion_regression_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 51 seconds</span>
               <div id="times-div-Test_automtion_regression_suite">
               </div> <!-- times-div-Test_automtion_regression_suite -->
             </div> <!-- times-div -->
@@ -318,53 +293,49 @@ return data;
                 <span class="method-name">setUp(Firefox, 80.0, Windows, 10, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkInv...)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">checkInventoryItemTest</span>
-                <span class="method-start">17278 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=checkInventoryItemTest status=SUCCESS method=SauceTestUpdated.checkInventoryItemTes...)</span>
-                <span class="method-start">29445 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(Firefox, 80.0, Windows, 10, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkAdd...)</span>
-                <span class="method-start">32344 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">checkAddToCartButtonTest</span>
-                <span class="method-start">51589 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=checkAddToCartButtonTest status=FAILURE method=SauceTestUpdated.checkAddToCartButto...)</span>
-                <span class="method-start">85386 ms</span>
-              </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(Chrome, 85.0, OS X, Catalina, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkI...)</span>
-                <span class="method-start">88783 ms</span>
+                <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkInventoryItemTest</span>
-                <span class="method-start">95661 ms</span>
+                <span class="method-start">9389 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkInventoryItemTest</span>
+                <span class="method-start">12226 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=checkInventoryItemTest status=SUCCESS method=SauceTestUpdated.checkInventoryItemTes...)</span>
-                <span class="method-start">99434 ms</span>
+                <span class="method-start">13467 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(Chrome, 85.0, OS X, Catalina, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkA...)</span>
-                <span class="method-start">102444 ms</span>
+                <span class="method-start">16280 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=checkInventoryItemTest status=SUCCESS method=SauceTestUpdated.checkInventoryItemTes...)</span>
+                <span class="method-start">19031 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">checkAddToCartButtonTest</span>
+                <span class="method-start">21703 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(Firefox, 80.0, Windows, 10, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkAdd...)</span>
+                <span class="method-start">21912 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">checkAddToCartButtonTest</span>
-                <span class="method-start">107742 ms</span>
+                <span class="method-start">34990 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=checkAddToCartButtonTest status=FAILURE method=SauceTestUpdated.checkAddToCartButto...)</span>
-                <span class="method-start">131583 ms</span>
+                <span class="method-name">tearDown([TestResult name=checkAddToCartButtonTest status=SUCCESS method=SauceTestUpdated.checkAddToCartButto...)</span>
+                <span class="method-start">45499 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=checkAddToCartButtonTest status=SUCCESS method=SauceTestUpdated.checkAddToCartButto...)</span>
+                <span class="method-start">60223 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

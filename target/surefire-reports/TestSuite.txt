@@ -1,12 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 135.884 s <<< FAILURE! - in TestSuite
-checkAddToCartButtonTest(com.mydemo.SauceTestUpdated)  Time elapsed: 31.826 s  <<< FAILURE!
-java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:33)
-
-checkAddToCartButtonTest(com.mydemo.SauceTestUpdated)  Time elapsed: 22.506 s  <<< FAILURE!
-java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:33)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 63.754 s - in TestSuite
