@@ -30,7 +30,7 @@ public class SauceTestUpdated extends BaseTestUpdated{
 		Login();
 		//ctx.getCurrentXmlTest().addParameter("Target","Target");
 		
-		Assert.assertTrue(driver.findElements(By.xpath("//button[text()='ADD TO CART']")).size() == 7);
+		Assert.assertTrue(driver.findElements(By.xpath("//button[text()='ADD TO CART']")).size() == 6);
 	}
 
 }
