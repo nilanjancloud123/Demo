@@ -23,6 +23,9 @@ public class BaseTestUpdated {
 	public  String USERNAME = "";
 	public  String AUTOMATE_KEY = "";
 	public  String URL = "";
+	public Boolean BROWSERSTACK_LOCAL=false;
+    public String BROWSERSTACK_LOCAL_IDENTIFIER="";
+    
 	 // This method accepts the status, reason and WebDriver instance and marks the test on BrowserStack
 	public void markTestStatus(String status, String reason) {  // the same WebDriver instance should be passed that is being used to run the test in the calling funtion
 			JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -62,6 +65,8 @@ public class BaseTestUpdated {
 		}else if(Target.equals("browserStack")) {
 			USERNAME = "nilanjanislam_pMmbWT";
 			AUTOMATE_KEY = "A1qJFrxjzTQTqfA6Q3AJ";
+			BROWSERSTACK_LOCAL= false;
+		    BROWSERSTACK_LOCAL_IDENTIFIER= "identifier";
 			URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 			caps.setCapability("os", os);
 			caps.setCapability("os_version", os_version);
@@ -69,6 +74,8 @@ public class BaseTestUpdated {
 			caps.setCapability("name", methodName);
 			caps.setCapability("browserstack.console", "errors");
 			caps.setCapability("browserstack.debug", "true");
+			caps.setCapability("browserstack.local", BROWSERSTACK_LOCAL);
+			caps.setCapability("browserstack.localIdentifier", BROWSERSTACK_LOCAL_IDENTIFIER);
 			if ((browserName).toUpperCase().equals("CHROME")) {
 				WebDriverManager.chromedriver().setup();
 				caps.setCapability("browser", "Chrome");
