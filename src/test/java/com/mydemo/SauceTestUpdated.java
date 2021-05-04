@@ -29,8 +29,9 @@ public class SauceTestUpdated extends BaseTestUpdated{
 	public void checkAddToCartButtonTest() {
 		Login();
 		//ctx.getCurrentXmlTest().addParameter("Target","Target");
+		System.out.println("*********Size of Add To Cart********" +driver.findElements(By.xpath("//button[text()='ADD TO CART']")).size());
 		
-		Assert.assertTrue(driver.findElements(By.xpath("//button[text()='ADD TO CART']")).size() == 6);
+		Assert.assertTrue(driver.findElements(By.xpath("//button[text()='Add to cart']")).size() == 6);
 	}
 
 }

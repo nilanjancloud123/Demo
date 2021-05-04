@@ -153,8 +153,32 @@
                   </a> <!-- checkAddToCartButtonTest -->
                   <span class="method-name">checkAddToCartButtonTest</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:33)
-... Removed 29 stack frames
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -164,8 +188,32 @@
                   </a> <!-- checkAddToCartButtonTest -->
                   <span class="method-name">checkAddToCartButtonTest</span>
                   <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:33)
-... Removed 29 stack frames
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:40)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:489)
+	at org.testng.internal.thread.ThreadUtil$1.call(ThreadUtil.java:52)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
@@ -202,11 +250,11 @@
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
-&lt;suite name=&quot;Test automtion regression suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+&lt;suite thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Test automtion regression suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;3&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;ExtentReportListener.ExtentReportListenerUpdated&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test - FF&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Test - FF&quot; verbose=&quot;3&quot;&gt;
     &lt;parameter name=&quot;Target&quot; value=&quot;browserStack&quot;/&gt;
     &lt;parameter name=&quot;os&quot; value=&quot;Windows&quot;/&gt;
     &lt;parameter name=&quot;os_version&quot; value=&quot;10&quot;/&gt;
@@ -216,7 +264,7 @@
       &lt;class name=&quot;com.mydemo.SauceTestUpdated&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Test - FF --&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;Test - Chrome&quot;&gt;
+  &lt;test thread-count=&quot;3&quot; parallel=&quot;tests&quot; name=&quot;Test - Chrome&quot; verbose=&quot;3&quot;&gt;
     &lt;parameter name=&quot;Target&quot; value=&quot;browserStack&quot;/&gt;
     &lt;parameter name=&quot;os&quot; value=&quot;OS X&quot;/&gt;
     &lt;parameter name=&quot;os_version&quot; value=&quot;Catalina&quot;/&gt;
@@ -270,24 +318,24 @@ data.addRows(4);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'checkAddToCartButtonTest')
 data.setCell(0, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(0, 3, 22138);
+data.setCell(0, 3, 45305);
 data.setCell(1, 0, 1)
 data.setCell(1, 1, 'checkAddToCartButtonTest')
 data.setCell(1, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(1, 3, 21711);
+data.setCell(1, 3, 43223);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'checkInventoryItemTest')
 data.setCell(2, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(2, 3, 3241);
+data.setCell(2, 3, 3550);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'checkInventoryItemTest')
 data.setCell(3, 2, 'com.mydemo.SauceTestUpdated')
-data.setCell(3, 3, 2647);
+data.setCell(3, 3, 2503);
 window.suiteTableData['Test_automtion_regression_suite']= { tableData: data, tableDiv: 'times-div-Test_automtion_regression_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Test_automtion_regression_suite">
               </div> <!-- times-div-Test_automtion_regression_suite -->
             </div> <!-- times-div -->
@@ -315,56 +363,56 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.mydemo.SauceTestUpdated</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
+                <span class="method-name">setUp(Chrome, 85.0, OS X, Catalina, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkI...)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
                 <span class="method-name">setUp(Firefox, 80.0, Windows, 10, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkInv...)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkInventoryItemTest</span>
-                <span class="method-start">10947 ms</span>
+                <span class="method-start">12278 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=checkInventoryItemTest status=SUCCESS method=SauceTestUpdated.checkInventoryItemTes...)</span>
-                <span class="method-start">14553 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(Firefox, 80.0, Windows, 10, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkAdd...)</span>
-                <span class="method-start">15762 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">checkAddToCartButtonTest</span>
-                <span class="method-start">22011 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">tearDown([TestResult name=checkAddToCartButtonTest status=FAILURE method=SauceTestUpdated.checkAddToCartButto...)</span>
-                <span class="method-start">44401 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-method before">
-                <span class="method-name">setUp(Chrome, 85.0, OS X, Catalina, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkI...)</span>
-                <span class="method-start">46393 ms</span>
-              </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">checkInventoryItemTest</span>
-                <span class="method-start">52628 ms</span>
+                <span class="method-start">16126 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=checkInventoryItemTest status=SUCCESS method=SauceTestUpdated.checkInventoryItemTes...)</span>
-                <span class="method-start">56480 ms</span>
+                <span class="method-start">16440 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-method before">
                 <span class="method-name">setUp(Chrome, 85.0, OS X, Catalina, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkA...)</span>
-                <span class="method-start">57847 ms</span>
+                <span class="method-start">19683 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=checkInventoryItemTest status=SUCCESS method=SauceTestUpdated.checkInventoryItemTes...)</span>
+                <span class="method-start">22777 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">checkAddToCartButtonTest</span>
+                <span class="method-start">25366 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp(Firefox, 80.0, Windows, 10, browserStack, optional, public void com.mydemo.SauceTestUpdated.checkAdd...)</span>
+                <span class="method-start">25434 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <img src="failed.png">
                 </img>
                 <span class="method-name">checkAddToCartButtonTest</span>
-                <span class="method-start">62082 ms</span>
+                <span class="method-start">39981 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">tearDown([TestResult name=checkAddToCartButtonTest status=FAILURE method=SauceTestUpdated.checkAddToCartButto...)</span>
-                <span class="method-start">84782 ms</span>
+                <span class="method-start">70200 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown([TestResult name=checkAddToCartButtonTest status=FAILURE method=SauceTestUpdated.checkAddToCartButto...)</span>
+                <span class="method-start">87052 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
