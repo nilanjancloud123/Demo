@@ -154,7 +154,7 @@
                    <!-- TestNG Suite XML files list for test execution -->
                    <suiteXmlFiles>
                        <suiteXmlFile>src/test/resources/testrunners/testng_runnerBrowserStack.xml</suiteXmlFile>
-                       <suiteXmlFile>suites-test-testng.xml</suiteXmlFile>
+                       
                    </suiteXmlFiles>
            </configuration>
         </plugin>
