@@ -63,8 +63,8 @@ public class BaseTestUpdated {
 		}
 			
 		}else if(Target.equals("browserStack")) {
-			USERNAME = "nilanjanislam_pMmbWT";
-			AUTOMATE_KEY = "A1qJFrxjzTQTqfA6Q3AJ";
+			USERNAME = "nilanjanislam_zjTHn0";
+			AUTOMATE_KEY = "txkJtZqKF67xtrseDjgV";
 			BROWSERSTACK_LOCAL= false;
 		    BROWSERSTACK_LOCAL_IDENTIFIER= "identifier";
 			URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
