@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" parallel="tests" name="Failed suite [Test automtion regression suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="ExtentReportListener.ExtentReportListenerUpdated"/>
+  </listeners>
+  <test thread-count="3" parallel="tests" name="Test - Chrome(failed)" verbose="0">
+    <parameter name="Target" value="browserStack"/>
+    <parameter name="os" value="OS X"/>
+    <parameter name="os_version" value="Catalina"/>
+    <parameter name="browserName" value="Chrome"/>
+    <parameter name="browser_version" value="85.0"/>
+    <classes>
+      <class name="com.mydemo.SauceTestUpdated">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="checkAddToCartButtonTest"/>
+        </methods>
+      </class> <!-- com.mydemo.SauceTestUpdated -->
+    </classes>
+  </test> <!-- Test - Chrome(failed) -->
+  <test thread-count="3" parallel="tests" name="Test - FF(failed)" verbose="0">
+    <parameter name="Target" value="browserStack"/>
+    <parameter name="os" value="Windows"/>
+    <parameter name="os_version" value="10"/>
+    <parameter name="browserName" value="Firefox"/>
+    <parameter name="browser_version" value="80.0"/>
+    <classes>
+      <class name="com.mydemo.SauceTestUpdated">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="checkAddToCartButtonTest"/>
+        </methods>
+      </class> <!-- com.mydemo.SauceTestUpdated -->
+    </classes>
+  </test> <!-- Test - FF(failed) -->
+</suite> <!-- Failed suite [Test automtion regression suite] -->

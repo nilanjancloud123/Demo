@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class SauceTestUpdated extends BaseTestUpdated{
 	JavascriptExecutor jse = (JavascriptExecutor)driver;
 	public void Login() {
@@ -16,6 +17,7 @@ public class SauceTestUpdated extends BaseTestUpdated{
 	}
 	
 	@Test(priority = 1)
+	//@TestCase(key = "QTDEM-T1")
 	public void checkInventoryItemTest() {
 		Login();
 		//ctx.getCurrentXmlTest().addParameter("Target","Target");
@@ -26,10 +28,11 @@ public class SauceTestUpdated extends BaseTestUpdated{
 	}
 
 	@Test(priority = 2)
+	//@TestCase(key = "QTDEM-T2")
 	public void checkAddToCartButtonTest() {
 		Login();
 		//ctx.getCurrentXmlTest().addParameter("Target","Target");
-		System.out.println("*********Size of Add To Cart********" +driver.findElements(By.xpath("//button[text()='ADD TO CART']")).size());
+		System.out.println("*********Size of Add To Cart********" +driver.findElements(By.xpath("//button[text()='Add to cart']")).size());
 		
 		Assert.assertTrue(driver.findElements(By.xpath("//button[text()='Add to cart']")).size() == 6);
 	}

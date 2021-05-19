@@ -1,2 +1,1 @@
-echo off
-call mvn clean install
+curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzZGY1MGMzNC00NTgwLTMwYzYtYTJhMi00NTRmODUwNjc1ODciLCJjb250ZXh0Ijp7ImJhc2VVcmwiOiJodHRwczpcL1wvaW5ub3ZhdGlvbnF0LmF0bGFzc2lhbi5uZXQiLCJ1c2VyIjp7ImFjY291bnRJZCI6IjYwOWU1M2VmNDdiYTAyMDA2ZmNmZjk2YiJ9fSwiaXNzIjoiY29tLmthbm9haC50ZXN0LW1hbmFnZXIiLCJleHAiOjE2NTI4NzY3NzIsImlhdCI6MTYyMTM0MDc3Mn0.Z5SOIUCSyf30Fo8ZYW0j1idyNxRV4-u9t3w-y5AtJC0" -F "file=@\test-output\junitreports\TEST-com.mydemo.SauceTestUpdated.xml;type=application/xml" https://api.adaptavist.io/tm4j/v2/automations/executions/junit?projectKey=QTDEM &autoCreateTestCases=true
