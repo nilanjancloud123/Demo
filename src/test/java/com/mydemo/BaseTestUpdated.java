@@ -1,7 +1,14 @@
 package com.mydemo;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.file.DirectoryNotEmptyException;
+import java.nio.file.FileSystems;
+import java.nio.file.Files;
+import java.nio.file.NoSuchFileException;
+import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
@@ -12,7 +19,9 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -32,6 +41,61 @@ public class BaseTestUpdated {
 			jse.executeScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\": \""+status+"\", \"reason\": \""+reason+"\"}}");
 		}
 	
+	public void DeleteFile() {
+
+	    
+	        Path path = FileSystems.getDefault().getPath("./reports");
+	       
+	        try {
+	            Files.deleteIfExists(path);
+	        } catch (NoSuchFileException x) {
+	            System.err.format("%s: no such" + " file or directory%n", path);
+	        } catch (DirectoryNotEmptyException x) {
+	            System.err.format("%s not empty%n", path);
+	        } catch (IOException x) {
+	            System.err.println(x);
+	        }
+	    
+	}
+	public static void deleteDirectory(File file)
+    {
+        // store all the paths of files and folders present
+        // inside directory
+        for (File subfile : file.listFiles()) {
+  
+            // if it is a subfolder,e.g Rohan and Ritik,
+            // recursiley call function to empty subfolder
+            if (subfile.isDirectory()) {
+                deleteDirectory(subfile);
+            }
+  
+            // delete files and empty subfolders
+            subfile.delete();
+        }
+    }
+	public void deletefile(String filePathN) {
+		String localDir = System.getProperty("user.dir");
+		
+		File file = new File(localDir + filePathN);
+	    // call deleteDirectory function to delete
+	    // subdirectory and files
+	    deleteDirectory(file);
+	    // delete main GFG folder
+	    //file.delete();
+	}
+	
+	@BeforeSuite
+	public void fileclear() {
+		String filepath = "\\screenshot";
+		deletefile(filepath);
+		String filepath1 = "\\reports";
+		deletefile(filepath1);
+		
+	// store file path
+    //String filepath = "C:\\Users\\nilanjan.islam\\eclipse-workspace\\Demo\\Demo\\screenshot";
+	
+ 
+}
 	@Parameters({"browserName", "browser_version", "os", "os_version","Target","platform"})
 	
 	@BeforeMethod
