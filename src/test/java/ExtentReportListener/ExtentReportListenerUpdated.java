@@ -41,7 +41,8 @@ public class ExtentReportListenerUpdated implements ITestListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		WebDriver driver=((SauceTestUpdated)result.getInstance()).driver;
-		String path = takescreenshot(driver,result.getMethod().getMethodName());
+		String path = ".."+takescreenshot(driver,result.getMethod().getMethodName());
+		System.out.println("****************Path*************" + path);
 		try {
 			extentTest.get().pass("<b><font color>" + "Screenshot of Passed Step"+"</font></b>",MediaEntityBuilder.createScreenCaptureFromPath(path).build());
 		}catch(IOException e) {
@@ -59,7 +60,8 @@ public class ExtentReportListenerUpdated implements ITestListener{
 		String exceptionMessage = Arrays.toString(result.getThrowable().getStackTrace());
 		extentTest.get().fail("<details><summary><b><font color=red>" + "Exceptoion Occured, click to see details :"+ "</font></b></summary>"+ exceptionMessage.replaceAll(",", "<br>")+"</details> \n");
 		WebDriver driver=((SauceTestUpdated)result.getInstance()).driver;
-		String path = takescreenshot(driver,result.getMethod().getMethodName());
+		String path = ".." + takescreenshot(driver,result.getMethod().getMethodName());
+		
 		try {
 			extentTest.get().fail("<b><font color>" + "Screenshot of failure"+"</font></b>",MediaEntityBuilder.createScreenCaptureFromPath(path).build());
 		}catch(IOException e) {
@@ -105,7 +107,9 @@ public class ExtentReportListenerUpdated implements ITestListener{
 	public String takescreenshot(WebDriver driver,String methodname) {
 		String filename = getScreenshotName(methodname);
 		String directory = System.getProperty("user.dir")+"/screenshot/";
+		//String directory = "../screenshot/";
 		new File (directory).mkdir();
+		String path1 = "/screenshot/"+ filename;
 		String path=directory+filename;
 		try {
 			File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
@@ -116,7 +120,7 @@ public class ExtentReportListenerUpdated implements ITestListener{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		return path;
+		return path1;
 		
 	}
 	public static String getScreenshotName(String methodname) {

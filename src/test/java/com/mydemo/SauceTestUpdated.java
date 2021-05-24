@@ -24,7 +24,6 @@ public class SauceTestUpdated extends BaseTestUpdated{
 		
 		
 		
-		Assert.assertTrue(driver.findElements(By.cssSelector(".inventory_item")).size() == 6);
 	}
 
 	@Test(priority = 2)

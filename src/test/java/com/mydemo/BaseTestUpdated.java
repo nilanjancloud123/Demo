@@ -1,5 +1,7 @@
 package com.mydemo;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.MalformedURLException;
@@ -9,8 +11,9 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
@@ -19,7 +22,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
@@ -27,13 +30,29 @@ import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseTestUpdated {
+
+public class BaseTestUpdated extends ZipUtils {
 	public WebDriver driver;
 	public  String USERNAME = "";
 	public  String AUTOMATE_KEY = "";
 	public  String URL = "";
 	public Boolean BROWSERSTACK_LOCAL=false;
     public String BROWSERSTACK_LOCAL_IDENTIFIER="";
+    public Properties prop;
+    
+   public BaseTestUpdated() {
+	   
+
+	    try	{
+	    	prop= new Properties();
+	    	FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+"/properties/config.properties");
+	    	prop.load(ip);
+	    }	catch(FileNotFoundException e) {
+	    	e.printStackTrace();
+	    }	catch(IOException e) {
+	    	e.printStackTrace();
+	    }
+   }
     
 	 // This method accepts the status, reason and WebDriver instance and marks the test on BrowserStack
 	public void markTestStatus(String status, String reason) {  // the same WebDriver instance should be passed that is being used to run the test in the calling funtion
@@ -84,18 +103,48 @@ public class BaseTestUpdated {
 	    //file.delete();
 	}
 	
+
+
+	
 	@BeforeSuite
 	public void fileclear() {
 		String filepath = "\\screenshot";
 		deletefile(filepath);
 		String filepath1 = "\\reports";
 		deletefile(filepath1);
+		String filepath2 = "\\email\\screenshot";
+		deletefile(filepath2);
+		String filepath3 = "\\email\\reports";
+		deletefile(filepath3);
 		
 	// store file path
     //String filepath = "C:\\Users\\nilanjan.islam\\eclipse-workspace\\Demo\\Demo\\screenshot";
 	
  
 }
+	public void filecopy(String source,String dest) {
+		String localDir = System.getProperty("user.dir");
+		File source1 = new File(localDir + source);
+		File dest1 = new File(localDir + dest);
+		try {
+		    FileUtils.copyDirectory(source1, dest1);
+		} catch (IOException e) {
+		    e.printStackTrace();
+		}
+		
+	}
+	
+	
+	
+	@AfterSuite
+	public void fileemail() {
+		filecopy("\\screenshot","\\email\\screenshot");
+		filecopy("\\reports","\\email\\reports");
+		String localDir = System.getProperty("user.dir");
+		zipfile( localDir+ "\\email",localDir+ "\\email.zip");
+		
+		
+	}
 	@Parameters({"browserName", "browser_version", "os", "os_version","Target","platform"})
 	
 	@BeforeMethod
@@ -188,4 +237,5 @@ public class BaseTestUpdated {
 		driver.quit();
 	}
 
+	
 }
