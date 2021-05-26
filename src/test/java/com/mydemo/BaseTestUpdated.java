@@ -140,6 +140,8 @@ public class BaseTestUpdated extends ZipUtils {
 	public void fileemail() {
 		filecopy("\\screenshot","\\email\\screenshot");
 		filecopy("\\reports","\\email\\reports");
+		filecopy("\\screenshot","\\HistoricalReports\\screenshot");
+		filecopy("\\reports","\\HistoricalReports\\reports");
 		String localDir = System.getProperty("user.dir");
 		zipfile( localDir+ "\\email",localDir+ "\\email.zip");
 		
