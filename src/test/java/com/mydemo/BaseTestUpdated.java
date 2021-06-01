@@ -28,6 +28,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
+
+import RestPost.RestPost;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -39,6 +41,9 @@ public class BaseTestUpdated implements ITest {
 	public Boolean BROWSERSTACK_LOCAL=false;
     public String BROWSERSTACK_LOCAL_IDENTIFIER="";
     public Properties prop;
+    public String EndPoint="";
+    public String tkn="";
+    public String filepath="";
     public ThreadLocal<String> testName = new ThreadLocal<>();
     
    public BaseTestUpdated(){
@@ -48,6 +53,9 @@ public class BaseTestUpdated implements ITest {
 	    	prop= new Properties();
 	    	FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+"/properties/config.properties");
 	    	prop.load(ip);
+	    	EndPoint = prop.getProperty("Endpoint");
+	    	tkn =prop.getProperty("Tkn");
+	    	filepath=prop.getProperty("FilePath");
 	    }	catch(FileNotFoundException e) {
 	    	e.printStackTrace();
 	    }	catch(IOException e) {
@@ -148,7 +156,9 @@ public class BaseTestUpdated implements ITest {
 	
 	
 	@AfterSuite
-	public void fileemail() {
+	
+	public void fileemail() throws IOException 
+	{
 		filecopy("\\screenshot","\\email\\screenshot");
 		filecopy("\\reports","\\email\\reports");
 		filecopy("\\screenshot","\\HistoricalReports\\screenshot");
@@ -156,10 +166,11 @@ public class BaseTestUpdated implements ITest {
 		String localDir = System.getProperty("user.dir");
 		
 		(new ZipUtils()).zipfile( localDir+ "\\email",localDir+ "\\email.zip");
-		
-		
+		String FilePathupdated = localDir + filepath;
+		(new RestPost()).executeMultiPartRequest(EndPoint, new File(FilePathupdated),tkn);
 	}
-	@Parameters({"browserName", "browser_version", "os", "os_version","Target","platform"})
+		
+		@Parameters({"browserName", "browser_version", "os", "os_version","Target","platform"})
 	
 //	@BeforeMethod
 //	public void BeforeMethod(Method method,String browserName ){
@@ -259,13 +270,14 @@ public class BaseTestUpdated implements ITest {
 		}
 		driver.quit();
 	}
+	
 
 	@Override
 	public String getTestName() {
 		// TODO Auto-generated method stub
 		return testName.get();
 	}
-
+	
 
 	
 }
