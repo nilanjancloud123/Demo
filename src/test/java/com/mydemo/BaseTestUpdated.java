@@ -19,6 +19,7 @@ import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
@@ -27,11 +28,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class BaseTestUpdated extends ZipUtils {
+public class BaseTestUpdated implements ITest {
 	public WebDriver driver;
 	public  String USERNAME = "";
 	public  String AUTOMATE_KEY = "";
@@ -39,8 +39,9 @@ public class BaseTestUpdated extends ZipUtils {
 	public Boolean BROWSERSTACK_LOCAL=false;
     public String BROWSERSTACK_LOCAL_IDENTIFIER="";
     public Properties prop;
+    public ThreadLocal<String> testName = new ThreadLocal<>();
     
-   public BaseTestUpdated() {
+   public BaseTestUpdated(){
 	   
 
 	    try	{
@@ -103,7 +104,17 @@ public class BaseTestUpdated extends ZipUtils {
 	    //file.delete();
 	}
 	
-
+	/*
+	 * public class SauceTestUpdated implements ITest {
+	 * 
+	 * 
+	 * @Override public String getTestName() { // TODO Auto-generated method stub
+	 * return testName.get(); }
+	 */
+//		@Override
+//		public String 
+		
+//	}
 
 	
 	@BeforeSuite
@@ -143,24 +154,31 @@ public class BaseTestUpdated extends ZipUtils {
 		filecopy("\\screenshot","\\HistoricalReports\\screenshot");
 		filecopy("\\reports","\\HistoricalReports\\reports");
 		String localDir = System.getProperty("user.dir");
-		zipfile( localDir+ "\\email",localDir+ "\\email.zip");
+		
+		(new ZipUtils()).zipfile( localDir+ "\\email",localDir+ "\\email.zip");
 		
 		
 	}
 	@Parameters({"browserName", "browser_version", "os", "os_version","Target","platform"})
 	
+//	@BeforeMethod
+//	public void BeforeMethod(Method method,String browserName ){
+//		   testName.set(method.getName() + "_" + browserName);
+//		}
+		
 	@BeforeMethod
-	
 	public void setUp(String browserName,String browser_version,@Optional("optional") String os,@Optional("optional") String os_version,String Target,@Optional("optional") String platform, Method name ,ITestContext ctx) {
 		ctx.getCurrentXmlTest().addParameter("Target",Target);
 		System.out.println("browser name is : " + browserName);
 		String methodName = name.getName();
-		
+		testName.set(methodName+"_"+browserName);
+		ctx.setAttribute("testName", testName.get());
+	    //ctx.setAttribute("testName", testName.get());
 		DesiredCapabilities caps = new DesiredCapabilities();
 		if(Target.equals("sauce")) {
 		URL ="https://ondemand.eu-central-1.saucelabs.com:443/wd/hub";
 		MutableCapabilities sauceOpts = new MutableCapabilities();
-		sauceOpts.setCapability("name", methodName);
+		sauceOpts.setCapability("name", testName.get());
 		sauceOpts.setCapability("build", "Java-W3C-Examples");
 		sauceOpts.setCapability("seleniumVersion", "3.141.59");
 		sauceOpts.setCapability("username", "nislam123");
@@ -178,15 +196,15 @@ public class BaseTestUpdated extends ZipUtils {
 		}
 			
 		}else if(Target.equals("browserStack")) {
-			USERNAME = "nilanjanislam_zjTHn0";
-			AUTOMATE_KEY = "txkJtZqKF67xtrseDjgV";
+			USERNAME = "nilanjanislam_HxLcDi";
+			AUTOMATE_KEY = "tvtqJxYH2eLZMfoB1mgs";
 			BROWSERSTACK_LOCAL= false;
 		    BROWSERSTACK_LOCAL_IDENTIFIER= "identifier";
 			URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 			caps.setCapability("os", os);
 			caps.setCapability("os_version", os_version);
 			caps.setCapability("browser_version", browser_version);
-			caps.setCapability("name", methodName);
+			caps.setCapability("name", testName.get());
 			caps.setCapability("browserstack.console", "errors");
 			caps.setCapability("browserstack.debug", "true");
 			caps.setCapability("browserstack.local", BROWSERSTACK_LOCAL);
@@ -219,16 +237,19 @@ public class BaseTestUpdated extends ZipUtils {
 		}
 
 	}
-
+	
 	@AfterMethod(alwaysRun = true)
 	
 	public void tearDown(ITestResult result, ITestContext ctx) {
 		//((JavascriptExecutor) driver).executeScript("job-result=" + (result.isSuccess() ? "passed" : "failed"));
 		String target = ctx.getCurrentXmlTest().getParameter("Target");
-		
+		String TestName= ctx.getCurrentXmlTest().getParameter("testName");
+		result.setAttribute(target, target);
+		result.setAttribute(TestName, TestName);
 		if (target.equals("browserStack") ) {
 			if (result.isSuccess()) {
 				markTestStatus("passed"," " + result.getMethod().getMethodName() + "  Success");
+				
 			}else
 			{
 				markTestStatus("failed"," "+ result.getMethod().getMethodName() +" Not Successfull");
@@ -238,6 +259,13 @@ public class BaseTestUpdated extends ZipUtils {
 		}
 		driver.quit();
 	}
+
+	@Override
+	public String getTestName() {
+		// TODO Auto-generated method stub
+		return testName.get();
+	}
+
 
 	
 }
