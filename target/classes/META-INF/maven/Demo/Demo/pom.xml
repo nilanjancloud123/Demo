@@ -219,6 +219,9 @@
                        <suiteXmlFile>src/test/resources/testrunners/testng_runnerBrowserStack.xml</suiteXmlFile>
                        
                    </suiteXmlFiles>
+                   
+                
+          
            </configuration>
         </plugin>
          

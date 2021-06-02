@@ -1,27 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Test automtion regression suite" verbose="1">
-	<listeners>
-		<listener class-name="ExtentReportListener.ExtentReportListenerUpdated" />
-	</listeners>
-
-	<test name="Test - FF">
+<suite name="Test automtion regression suite1" verbose="1">
 	
-		<parameter name="Target" value="local" />
-		<parameter name="browserName" value="Firefox" />
+	
+	<test name="Test - Report">
 		<classes>
-			<class name="com.mydemo.SauceTestUpdated" />
-		</classes>
-
-	</test>
-
-	<test name="Test - Chrome">
-		<parameter name="Target" value="local" />
-		<parameter name="browserName" value="Chrome" />
-
-		<classes>
-			<class name="com.mydemo.SauceTestUpdated" />
+			<class name="RestPost.RestPost" />
 		</classes>
 
 	</test>

@@ -1,8 +1,12 @@
 package TestNGListner;
 
+import java.io.File;
+
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import RestPost.RestPost;
 
 
 
@@ -11,7 +15,10 @@ public class testNGListner implements ITestListener{
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
-		
+		//testName.get();
+		String TestName= ctx.getCurrentXmlTest().getParameter("testName");
+		result.setAttribute(target, target);
+		result.setAttribute(TestName, TestName);
 	}
 
 	@Override
@@ -47,7 +54,10 @@ public class testNGListner implements ITestListener{
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
-		
+//		String localDir = System.getProperty("user.dir");
+//		String FilePathupdated = localDir + filepath;
+//		System.out.println("*******************File PAth ****************************************************"+FilePathupdated);
+//		(new RestPost()).executeMultiPartRequest(EndPoint, new File(FilePathupdated),tkn);
 	}
 
 }

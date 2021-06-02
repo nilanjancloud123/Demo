@@ -22,6 +22,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
@@ -47,18 +48,17 @@ public class BaseTestUpdated implements ITest {
     public ThreadLocal<String> testName = new ThreadLocal<>();
     
    public BaseTestUpdated(){
-	   
-
-	    try	{
+	   	    try	
+	   	    {
 	    	prop= new Properties();
 	    	FileInputStream ip= new FileInputStream(System.getProperty("user.dir")+"/properties/config.properties");
 	    	prop.load(ip);
 	    	EndPoint = prop.getProperty("Endpoint");
 	    	tkn =prop.getProperty("Tkn");
 	    	filepath=prop.getProperty("FilePath");
-	    }	catch(FileNotFoundException e) {
+	   	    }catch(FileNotFoundException e) {
 	    	e.printStackTrace();
-	    }	catch(IOException e) {
+	   	    }catch(IOException e) {
 	    	e.printStackTrace();
 	    }
    }
@@ -156,19 +156,26 @@ public class BaseTestUpdated implements ITest {
 	
 	
 	@AfterSuite
-	
-	public void fileemail() throws IOException 
+	public void fileemail() throws IOException, InterruptedException 
 	{
-		filecopy("\\screenshot","\\email\\screenshot");
-		filecopy("\\reports","\\email\\reports");
-		filecopy("\\screenshot","\\HistoricalReports\\screenshot");
-		filecopy("\\reports","\\HistoricalReports\\reports");
-		String localDir = System.getProperty("user.dir");
+		try {
+			filecopy("\\screenshot","\\email\\screenshot");
+			filecopy("\\reports","\\email\\reports");
+			filecopy("\\screenshot","\\HistoricalReports\\screenshot");
+			filecopy("\\reports","\\HistoricalReports\\reports");
+			String localDir = System.getProperty("user.dir");
+			(new ZipUtils()).zipfile( localDir+ "\\email",localDir+ "\\email.zip");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 		
-		(new ZipUtils()).zipfile( localDir+ "\\email",localDir+ "\\email.zip");
-		String FilePathupdated = localDir + filepath;
-		(new RestPost()).executeMultiPartRequest(EndPoint, new File(FilePathupdated),tkn);
+			
+		
+		
+		
+		
 	}
+	
 		
 		@Parameters({"browserName", "browser_version", "os", "os_version","Target","platform"})
 	
@@ -275,6 +282,11 @@ public class BaseTestUpdated implements ITest {
 		return testName.get();
 	}
 	
-
+//	public void genaratereport() throws IOException {
+//		String localDir = System.getProperty("user.dir");
+//		String FilePathupdated = localDir + filepath;
+//		(new RestPost()).executeMultiPartRequest(EndPoint, new File(FilePathupdated),tkn);
+//	}
+	
 	
 }
