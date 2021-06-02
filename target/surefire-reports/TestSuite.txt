@@ -1,21 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 4, Errors: 0, Skipped: 1, Time elapsed: 26.632 s <<< FAILURE! - in TestSuite
-null(RestPost.RestPost)  Time elapsed: 0.631 s  <<< FAILURE!
-org.testng.TestNGException: 
-
-Parameter 'browserName' is required by BeforeMethod on method setUp but has not been marked @Optional or defined
-in C:\Users\nilanjan.islam\eclipse-workspace\Demo\Demo\src\test\resources\testrunners\testng_runnerLocal.xml
-
-null(RestPost.RestPost)  Time elapsed: 0.633 s  <<< FAILURE!
-java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.log(com.aventstack.extentreports.Status, com.aventstack.extentreports.markuputils.Markup)" because the return value of "java.lang.ThreadLocal.get()" is null
-
-checkAddToCartButtonTest_Chrome(com.mydemo.SauceTestUpdated)  Time elapsed: 2.332 s  <<< FAILURE!
-java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:38)
-
-checkAddToCartButtonTest_Firefox(com.mydemo.SauceTestUpdated)  Time elapsed: 2.443 s  <<< FAILURE!
-java.lang.AssertionError: expected [true] but found [false]
-	at com.mydemo.SauceTestUpdated.checkAddToCartButtonTest(SauceTestUpdated.java:38)
-
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 40.915 s - in TestSuite

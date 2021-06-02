@@ -1,7 +1,6 @@
 com\mydemo\BaseTestUpdated.class
 ExtentReportListener\ExtentReportListenerUpdated.class
 com\mydemo\ZipUtils.class
-RestPost\RestPost.class
 com\mydemo\SauceTestUpdated.class
 ExtentReportListener\ExtentReporterNG.class
 Base\ExtentManager.class
