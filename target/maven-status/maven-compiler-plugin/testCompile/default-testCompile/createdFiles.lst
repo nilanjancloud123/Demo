@@ -1,6 +1,3 @@
-com\mydemo\BaseTestUpdated.class
-ExtentReportListener\ExtentReportListenerUpdated.class
 com\mydemo\ZipUtils.class
-com\mydemo\SauceTestUpdated.class
 ExtentReportListener\ExtentReporterNG.class
 Base\ExtentManager.class

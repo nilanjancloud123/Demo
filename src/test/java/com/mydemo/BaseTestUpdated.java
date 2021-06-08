@@ -11,6 +11,7 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.NoSuchFileException;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.apache.commons.io.FileUtils;
@@ -22,15 +23,13 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITest;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
-import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
-
-import RestPost.RestPost;
+import RestPost.JiraExecution;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
@@ -43,11 +42,12 @@ public class BaseTestUpdated implements ITest {
     public String BROWSERSTACK_LOCAL_IDENTIFIER="";
     public Properties prop;
     public String EndPoint="";
-    public String tkn="";
     public String filepath="";
     public ThreadLocal<String> testName = new ThreadLocal<>();
-    
-   public BaseTestUpdated(){
+    public static String cycleid;
+    public String tkn ="Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzZGY1MGMzNC00NTgwLTMwYzYtYTJhMi00NTRmODUwNjc1ODciLCJjb250ZXh0Ijp7ImJhc2VVcmwiOiJodHRwczpcL1wvaW5ub3ZhdGlvbnF0LmF0bGFzc2lhbi5uZXQiLCJ1c2VyIjp7ImFjY291bnRJZCI6IjYwOWU1M2VmNDdiYTAyMDA2ZmNmZjk2YiJ9fSwiaXNzIjoiY29tLmthbm9haC50ZXN0LW1hbmFnZXIiLCJleHAiOjE2NTI4NzY3NzIsImlhdCI6MTYyMTM0MDc3Mn0.Z5SOIUCSyf30Fo8ZYW0j1idyNxRV4-u9t3w-y5AtJC0";
+    public String EndPointCloud="https://api.adaptavist.io/tm4j/v2";
+    public BaseTestUpdated(){
 	   	    try	
 	   	    {
 	    	prop= new Properties();
@@ -138,9 +138,14 @@ public class BaseTestUpdated implements ITest {
 		
 	// store file path
     //String filepath = "C:\\Users\\nilanjan.islam\\eclipse-workspace\\Demo\\Demo\\screenshot";
+		 
 	
- 
-}
+	  cycleid = JiraExecution.createCycle(tkn,"QTDEM",EndPointCloud) ;
+	  System.out.println("*****CycleID *****" + cycleid);
+	  
+	  
+
+	}
 	public void filecopy(String source,String dest) {
 		String localDir = System.getProperty("user.dir");
 		File source1 = new File(localDir + source);
@@ -158,6 +163,8 @@ public class BaseTestUpdated implements ITest {
 	@AfterSuite
 	public void fileemail() throws IOException, InterruptedException 
 	{
+		
+		//JiraExecution.testExecution("user","Pwd","Endpoint","QTDEM", payloadString);
 		try {
 			filecopy("\\screenshot","\\email\\screenshot");
 			filecopy("\\reports","\\email\\reports");
@@ -190,8 +197,9 @@ public class BaseTestUpdated implements ITest {
 		System.out.println("browser name is : " + browserName);
 		String methodName = name.getName();
 		testName.set(methodName+"_"+browserName);
+		
 		ctx.setAttribute("testName", testName.get());
-	    //ctx.setAttribute("testName", testName.get());
+		//ctx.setAttribute("testName", testName.get());
 		DesiredCapabilities caps = new DesiredCapabilities();
 		if(Target.equals("sauce")) {
 		URL ="https://ondemand.eu-central-1.saucelabs.com:443/wd/hub";
@@ -214,8 +222,8 @@ public class BaseTestUpdated implements ITest {
 		}
 			
 		}else if(Target.equals("browserStack")) {
-			USERNAME = "nilanjanislam_HxLcDi";
-			AUTOMATE_KEY = "tvtqJxYH2eLZMfoB1mgs";
+			USERNAME = "nilanjanislam_QvESjU";
+			AUTOMATE_KEY = "yzfpaoLLrHRhxANoJ3Tj";
 			BROWSERSTACK_LOCAL= false;
 		    BROWSERSTACK_LOCAL_IDENTIFIER= "identifier";
 			URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
@@ -258,20 +266,55 @@ public class BaseTestUpdated implements ITest {
 	public void tearDown(ITestResult result, ITestContext ctx) {
 		//((JavascriptExecutor) driver).executeScript("job-result=" + (result.isSuccess() ? "passed" : "failed"));
 		String target = ctx.getCurrentXmlTest().getParameter("Target");
-		String TestName= ctx.getCurrentXmlTest().getParameter("testName");
+		
+		String TestName= (String) ctx.getAttribute("testName");
+		String exceptionMessage1="";
+		String TestCaseKey="";
+		String Comment="";
+		String Status="";
+		//String Endpoint = "https://api.adaptavist.io/tm4j/v2";
+		
+		if (TestName.equals("checkInventoryItemTest_Chrome")) {
+			TestCaseKey="QTDEM-T4";
+		}
+		if (TestName.equals("checkAddToCartButtonTest_Chrome")) {
+			TestCaseKey="QTDEM-T5";
+		}
+		if (TestName.equals("checkInventoryItemTest_Firefox")) {
+			TestCaseKey="QTDEM-T6";
+		}
+		if (TestName.equals("checkAddToCartButtonTest_Firefox")) {
+			TestCaseKey="QTDEM-T7";
+		}
 		result.setAttribute(target, target);
 		result.setAttribute(TestName, TestName);
+		
+		if (result.isSuccess()) {
+			Comment=result.getMethod().getMethodName() + "  Success";
+			Status = "pass";
+			JiraExecution.testExecution(tkn,"QTDEM",EndPointCloud, TestCaseKey, cycleid, Status, Comment);
+			
+		}else
+		{
+			exceptionMessage1 = Arrays.toString(result.getThrowable().getStackTrace());
+			Comment=exceptionMessage1.replaceAll(",", "<br>");
+			Status = "fail";
+			JiraExecution.testExecution(tkn,"QTDEM",EndPointCloud, TestCaseKey, cycleid, Status, Comment);
+			
+		}
 		if (target.equals("browserStack") ) {
 			if (result.isSuccess()) {
-				markTestStatus("passed"," " + result.getMethod().getMethodName() + "  Success");
+				markTestStatus("passed"," " + Comment);
 				
 			}else
 			{
-				markTestStatus("failed"," "+ result.getMethod().getMethodName() +" Not Successfull");
+				markTestStatus("passed"," " + Comment);
 			}
 		} else if(target.equals("sauce")) {
 			((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (result.isSuccess() ? "passed" : "failed"));
 		}
+		
+		
 		driver.quit();
 	}
 	

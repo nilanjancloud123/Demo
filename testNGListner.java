@@ -16,9 +16,8 @@ public class testNGListner implements ITestListener{
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
 		//testName.get();
-		String TestName= ctx.getCurrentXmlTest().getParameter("testName");
-		result.setAttribute(target, target);
-		result.setAttribute(TestName, TestName);
+		String TestName1= ctx.getCurrentXmlTest().getParameter("testName");
+		result.setAttribute(TestName, TestName1);
 	}
 
 	@Override

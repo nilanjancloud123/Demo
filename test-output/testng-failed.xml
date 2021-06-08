@@ -13,8 +13,10 @@
     <classes>
       <class name="com.mydemo.SauceTestUpdated">
         <methods>
+          <include name="fileemail"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="fileclear"/>
           <include name="checkAddToCartButtonTest"/>
         </methods>
       </class> <!-- com.mydemo.SauceTestUpdated -->
@@ -29,8 +31,10 @@
     <classes>
       <class name="com.mydemo.SauceTestUpdated">
         <methods>
+          <include name="fileemail"/>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="fileclear"/>
           <include name="checkAddToCartButtonTest"/>
         </methods>
       </class> <!-- com.mydemo.SauceTestUpdated -->

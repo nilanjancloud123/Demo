@@ -13,31 +13,13 @@
     <classes>
       <class name="com.mydemo.SauceTestUpdated">
         <methods>
+          <include name="checkInventoryItemTest"/>
           <include name="fileemail"/>
           <include name="setUp"/>
           <include name="tearDown"/>
           <include name="fileclear"/>
-          <include name="checkAddToCartButtonTest"/>
         </methods>
       </class> <!-- com.mydemo.SauceTestUpdated -->
     </classes>
   </test> <!-- Test - Chrome(failed) -->
-  <test thread-count="3" parallel="tests" name="Test - FF(failed)" verbose="0">
-    <parameter name="Target" value="browserStack"/>
-    <parameter name="os" value="Windows"/>
-    <parameter name="os_version" value="10"/>
-    <parameter name="browserName" value="Firefox"/>
-    <parameter name="browser_version" value="80.0"/>
-    <classes>
-      <class name="com.mydemo.SauceTestUpdated">
-        <methods>
-          <include name="fileemail"/>
-          <include name="setUp"/>
-          <include name="tearDown"/>
-          <include name="fileclear"/>
-          <include name="checkAddToCartButtonTest"/>
-        </methods>
-      </class> <!-- com.mydemo.SauceTestUpdated -->
-    </classes>
-  </test> <!-- Test - FF(failed) -->
 </suite> <!-- Failed suite [Test automtion regression suite] -->
