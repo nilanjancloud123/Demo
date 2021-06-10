@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-06-08T11:17:29Z" name="Test automtion regression suite" finished-at="2021-06-08T11:17:54Z" duration-ms="24791">
+  <suite started-at="2021-06-10T10:43:37Z" name="Test automtion regression suite" finished-at="2021-06-10T10:44:05Z" duration-ms="28450">
     <groups>
     </groups>
-    <test started-at="2021-06-08T11:17:29Z" name="Test - Chrome" finished-at="2021-06-08T11:17:51Z" duration-ms="21794">
+    <test started-at="2021-06-10T10:43:37Z" name="Test - Chrome" finished-at="2021-06-10T10:44:00Z" duration-ms="23461">
       <class name="com.mydemo.SauceTestUpdated">
-        <test-method is-config="true" signature="fileclear()[pri:0, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:28Z" name="fileclear" finished-at="2021-06-08T11:17:29Z" duration-ms="1089" status="PASS">
+        <test-method is-config="true" signature="fileclear()[pri:0, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:43:36Z" name="fileclear" finished-at="2021-06-10T10:43:37Z" duration-ms="799" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fileclear -->
-        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:29Z" name="setUp" finished-at="2021-06-08T11:17:35Z" duration-ms="5994" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:43:37Z" name="setUp" finished-at="2021-06-10T10:43:44Z" duration-ms="6824" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -50,34 +50,34 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[org.testng.TestRunner@354fc8f0]]>
+                <![CDATA[org.testng.TestRunner@75ed9710]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:35Z" name="checkInventoryItemTest" finished-at="2021-06-08T11:17:37Z" duration-ms="2212" status="PASS">
+        <test-method signature="checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:43:44Z" name="checkInventoryItemTest" finished-at="2021-06-10T10:43:45Z" duration-ms="1713" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkInventoryItemTest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:38Z" name="tearDown" finished-at="2021-06-08T11:17:40Z" duration-ms="1756" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:43:46Z" name="tearDown" finished-at="2021-06-10T10:43:49Z" duration-ms="2111" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkInventoryItemTest_Chrome status=SUCCESS method=SauceTestUpdated.checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@2657d4dd] output={null}]]]>
+                <![CDATA[[TestResult name=checkInventoryItemTest_Chrome status=SUCCESS method=SauceTestUpdated.checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@7857fe2] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@354fc8f0]]>
+                <![CDATA[org.testng.TestRunner@75ed9710]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:40Z" name="setUp" finished-at="2021-06-08T11:17:45Z" duration-ms="5435" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:43:49Z" name="setUp" finished-at="2021-06-10T10:43:54Z" duration-ms="5584" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -116,42 +116,42 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[org.testng.TestRunner@354fc8f0]]>
+                <![CDATA[org.testng.TestRunner@75ed9710]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:45Z" name="checkAddToCartButtonTest" finished-at="2021-06-08T11:17:48Z" duration-ms="2587" status="PASS">
+        <test-method signature="checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:43:54Z" name="checkAddToCartButtonTest" finished-at="2021-06-10T10:43:57Z" duration-ms="2470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkAddToCartButtonTest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:49Z" name="tearDown" finished-at="2021-06-08T11:17:51Z" duration-ms="1983" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:43:58Z" name="tearDown" finished-at="2021-06-10T10:44:00Z" duration-ms="2710" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkAddToCartButtonTest_Chrome status=SUCCESS method=SauceTestUpdated.checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@2657d4dd] output={null}]]]>
+                <![CDATA[[TestResult name=checkAddToCartButtonTest_Chrome status=SUCCESS method=SauceTestUpdated.checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@7857fe2] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@354fc8f0]]>
+                <![CDATA[org.testng.TestRunner@75ed9710]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="fileemail()[pri:0, instance:com.mydemo.SauceTestUpdated@2657d4dd]" started-at="2021-06-08T11:17:54Z" name="fileemail" finished-at="2021-06-08T11:17:54Z" duration-ms="108" status="PASS">
+        <test-method is-config="true" signature="fileemail()[pri:0, instance:com.mydemo.SauceTestUpdated@7857fe2]" started-at="2021-06-10T10:44:05Z" name="fileemail" finished-at="2021-06-10T10:44:05Z" duration-ms="119" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fileemail -->
       </class> <!-- com.mydemo.SauceTestUpdated -->
     </test> <!-- Test - Chrome -->
-    <test started-at="2021-06-08T11:17:29Z" name="Test - FF" finished-at="2021-06-08T11:17:54Z" duration-ms="24791">
+    <test started-at="2021-06-10T10:43:37Z" name="Test - FF" finished-at="2021-06-10T10:44:05Z" duration-ms="28450">
       <class name="com.mydemo.SauceTestUpdated">
-        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@1c742ed4]" started-at="2021-06-08T11:17:29Z" name="setUp" finished-at="2021-06-08T11:17:37Z" duration-ms="8027" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2dfaea86]" started-at="2021-06-10T10:43:37Z" name="setUp" finished-at="2021-06-10T10:43:46Z" duration-ms="9236" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -190,34 +190,34 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[org.testng.TestRunner@41813449]]>
+                <![CDATA[org.testng.TestRunner@61884cb1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@1c742ed4]" started-at="2021-06-08T11:17:37Z" name="checkInventoryItemTest" finished-at="2021-06-08T11:17:39Z" duration-ms="1874" status="PASS">
+        <test-method signature="checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@2dfaea86]" started-at="2021-06-10T10:43:46Z" name="checkInventoryItemTest" finished-at="2021-06-10T10:43:49Z" duration-ms="2640" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkInventoryItemTest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@1c742ed4]" started-at="2021-06-08T11:17:40Z" name="tearDown" finished-at="2021-06-08T11:17:41Z" duration-ms="1852" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2dfaea86]" started-at="2021-06-10T10:43:50Z" name="tearDown" finished-at="2021-06-10T10:43:52Z" duration-ms="1961" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkInventoryItemTest_Firefox status=SUCCESS method=SauceTestUpdated.checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@1c742ed4] output={null}]]]>
+                <![CDATA[[TestResult name=checkInventoryItemTest_Firefox status=SUCCESS method=SauceTestUpdated.checkInventoryItemTest()[pri:1, instance:com.mydemo.SauceTestUpdated@2dfaea86] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@41813449]]>
+                <![CDATA[org.testng.TestRunner@61884cb1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@1c742ed4]" started-at="2021-06-08T11:17:41Z" name="setUp" finished-at="2021-06-08T11:17:49Z" duration-ms="7254" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.reflect.Method, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2dfaea86]" started-at="2021-06-10T10:43:52Z" name="setUp" finished-at="2021-06-10T10:44:00Z" duration-ms="7887" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -256,27 +256,27 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[org.testng.TestRunner@41813449]]>
+                <![CDATA[org.testng.TestRunner@61884cb1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@1c742ed4]" started-at="2021-06-08T11:17:49Z" name="checkAddToCartButtonTest" finished-at="2021-06-08T11:17:51Z" duration-ms="1964" status="PASS">
+        <test-method signature="checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@2dfaea86]" started-at="2021-06-10T10:44:00Z" name="checkAddToCartButtonTest" finished-at="2021-06-10T10:44:02Z" duration-ms="2420" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkAddToCartButtonTest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@1c742ed4]" started-at="2021-06-08T11:17:52Z" name="tearDown" finished-at="2021-06-08T11:17:54Z" duration-ms="1794" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult, org.testng.ITestContext)[pri:0, instance:com.mydemo.SauceTestUpdated@2dfaea86]" started-at="2021-06-10T10:44:03Z" name="tearDown" finished-at="2021-06-10T10:44:05Z" duration-ms="1915" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkAddToCartButtonTest_Firefox status=SUCCESS method=SauceTestUpdated.checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@1c742ed4] output={null}]]]>
+                <![CDATA[[TestResult name=checkAddToCartButtonTest_Firefox status=SUCCESS method=SauceTestUpdated.checkAddToCartButtonTest()[pri:2, instance:com.mydemo.SauceTestUpdated@2dfaea86] output={null}]]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@41813449]]>
+                <![CDATA[org.testng.TestRunner@61884cb1]]>
               </value>
             </param>
           </params>

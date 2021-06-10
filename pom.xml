@@ -145,10 +145,18 @@
       </dependency>
       <dependency>
           <groupId>innovation</groupId>
-  <artifactId>jiraRestApi</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <scope>system</scope>
-  <systemPath>C:\Users\nilanjan.islam\.m2\repository\innovation\jiraRestApi\0.0.1-SNAPSHOT\jiraRestApi-0.0.1-SNAPSHOT.jar</systemPath>
+		  <artifactId>jiraRestApi</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		  <scope>system</scope>
+		  <systemPath>C:\Users\nilanjan.islam\.m2\repository\innovation\jiraRestApi\0.0.1-SNAPSHOT\jiraRestApi-0.0.1-SNAPSHOT.jar</systemPath>
+      </dependency>
+      <dependency>
+          <groupId>CloudExecution</groupId>
+		  <artifactId>CloudExecution</artifactId>
+		  <version>0.0.1-SNAPSHOT</version>
+		  <scope>system</scope>
+		  <!-- <systemPath>C:\Users\nilanjan.islam\.m2\repository\CloudExecution\CloudExecution\0.0.1-SNAPSHOT\CloudExecution-0.0.1-SNAPSHOT.jar</systemPath> -->
+      	<systemPath>${project.basedir}\CloudExecution-0.0.1-SNAPSHOT.jar</systemPath>	
       </dependency>
         <!-- https://mvnrepository.com/artifact/com.github.skwakman.nodejs-maven-plugin/nodejs-maven-plugin -->
 	<dependency>
